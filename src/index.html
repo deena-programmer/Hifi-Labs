@@ -1,0 +1,628 @@
+<html lang="en">
+<head>
+    <title>Home</title> 
+   <!-- Modal -->
+    <div class="modal fade p-0" style="z-index: 1999; display: none;" id="locate" tabindex="-1" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    <div class="modal-header text-center">
+        <h5 class=" modal-title " id="modalTitleId">Select Your Area </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <div class="container">
+    <div class="row text-center">
+        <p class="btn esarea"><b><img src="images/map.svg" width="15px"> Location - </b></p>
+    </div>
+    </div>
+    <div class="container mt-3">
+    <div class="row text-center">
+        <div class="col-12">
+         <div class="search-box">
+            <p>Search Your Area or Pincode </p>
+            <input class="form-control" autocomplete="off" type="text" placeholder="Search by Area or Pincode in (Bangalore , Chennai)" aria-label="Search">
+            <div class="result mt-3"></div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <hr>
+
+    <div class="container my-3">
+    <div class="row">
+    <div class="col-12">
+    <div class="search-box">
+     <p>Example Areas</p>
+        <div class="row">
+        <div class="col-12 col-md-6 my-1 text-start">
+          <form name="pincode_600004" method="post" action="shop">
+            <input type="hidden" name="pincode" value="600004">
+            <input type="hidden" name="location" value="Mylopore">
+            <input type="hidden" name="city" value="chennai">
+
+            <span class="badge bg-info ecspan"><img width="10px"src="images/map.svg">&nbsp; Chennai</span> <input
+                class="location-input1 btn btn-outline-info ecbtn text-dark" type="submit" value="Mylopore">
+        </form>
+    </div>
+    <div class="col-12 col-md-6 my-1 text-start">
+        <form name="pincode_600008" method="post" action="shop">
+            <input type="hidden" name="pincode" value="600008">
+            <input type="hidden" name="location" value="Egmore">
+            <input type="hidden" name="city" value="chennai">
+            <span class="badge bg-info ecspan"><img width="10px"src="images/map.svg">&nbsp; Chennai</span> 
+            <input class="location-input1 btn btn-outline-info ecbtn text-dark" type="submit" value="Egmore">
+        </form>
+    </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    </div>
+ </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  </div>
+ </div>
+</div>
+</div>
+<div class="collapse navbar-collapse lgn mx-auto" id="collapsibleNavId">
+     <ul class="navbar-nav mx-auto ml-auto mt-2 mt-lg-0 text-center text-md-end ">
+        <li class="nav-item d-flex justify-contend-center align-items-center">
+          <a class="nav-link dwnlod-btn  fw-bold px-3 my-2 my-md-0 px-md-2"  href="./reportLogin">Download Report <i><g clip-path="url(#clip0_62_2)"><path
+                d="M7.33337 31.1667V34.8334C7.33337 35.8059 7.71968 36.7385 8.40732 37.4261C9.09495 38.1138 10.0276 38.5001 11 38.5001H33C33.9725 38.5001 34.9051 38.1138 35.5928 37.4261C36.2804 36.7385 36.6667 35.8059 36.6667 34.8334V31.1667"
+                stroke="white" stroke-width="2.75" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+                <path d="M12.8334 20.1667L22 29.3334L31.1667 20.1667" stroke="white"
+                    stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M22 7.33325V29.3333" stroke="white" stroke-width="2.75"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+            <defs>
+                <clipPath id="clip0_62_2">
+                    <rect width="44" height="44" fill="white"></rect>
+                </clipPath>
+            </defs>
+        </svg></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link ms-1 log-btn" style="color: white !important; border-radius:5px;background-color: #007CBC;" href="./login">Login</a>
+        </li>
+        <li class="nav-item mx-2">
+        <a class="nav-link fw-bold" href="tel:7550177777"><img src="images/phone.svg"style="width:20px"> 75501 77777</a>
+        </div>
+        <a class="nav-link text-dark  float-end mycart" href="./checkout" aria-current="page">
+         <img src="images/cart.svg" style="width:25px">
+        <sup id="cartCount" class="badge bg-success cartCount" style="background-color:#B41E85 !important"></sup>
+        </a>
+        </div>
+    </nav>
+    
+    <div class="col-md-6 ">
+        <div class=" search-item input-group  mb-2 mb-md-0 ">
+         <button class="input-group-text text-white d-none d-md-block " id="basic-addon1">Search Tests
+         </button>
+         <input type="text" class="form-control  bg-white  text-black box-rad ms-4 ms-md-0 "placeholder="Search eg: CBC TEST"><span id="prodRes" class="result-items mt-5 "></span>
+        </div>
+    </div>
+    </div>
+    </nav> 
+    <!-- </header> -->
+    <div id="loggedIn" class="position-absolute top-10 end-0 alert text-center myalert alert-success">
+        <strong>Logged In Successfully!</strong>
+    </div>
+    <div id="register" class="position-absolute top-10 end-0 alert text-center myalert alert-warning">
+        <strong>Sorry! Please Register to Login</strong>
+    </div>
+    <div id="cartAlertAdd" class="position-absolute top-10 end-0 alert text-center myalert alert-success">
+        <strong>Added to Cart Successfully!</strong>
+    </div>
+    <div id="cartAlertAlready" class="position-absolute top-10 end-0 alert text-center myalert alert-warning">
+        <strong>Already Added to Cart!</strong>
+    </div>
+    <div id="cartAlertRemoved" class="position-absolute top-10 end-0 alert text-center myalert alert-danger">
+        <strong>Removed From Cart Successfully!</strong>
+    </div>
+
+    <main>
+    </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <a href="/shop/packages"><img class="d-block w-100 H-100" src="./images/banner3.jpg"
+                            alt="1 slide"></a>
+            </div>
+            <div class="carousel-item active">
+                <a href="/shop/packages"><img class="d-block w-100 H-100" src="./images/nnbanner2.jpg"
+                            alt="2 slide"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="/shop/packages"><img class="d-block w-100" src="./images/banner5.jpg"
+                            alt="3 slide"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="/shop/packages"><img class="d-block w-100"
+                    src="https://medall.s3.ap-south-1.amazonaws.com/887+x+633_Banner.jpg"alt="4 slide"></a>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+    </div>
+    
+    
+        <div class="container-fluid p-0">
+            <h1 class="packageBookedTitle text-center pt-md-3">Our <span class="packageBookedTitle2">Most Selling
+                </span>Packages
+            </h1>
+            <div class="center slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow"
+                    aria-label="Previous" type="button" >Previous</button>
+
+                <div class="slick-list draggable">
+                    <div class="slick-track"
+                        style="opacity: 1; width: 2926px; transform: translate3d(-798px, 0px, 0px);">
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="-3" id=""
+                            aria-hidden="true" tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhpro.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="-2" id=""
+                            aria-hidden="true" tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhsupreme.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="-1" id=""
+                            aria-hidden="true" tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhexpert.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-current slick-active" data-slick-index="0"
+                            aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00"
+                            aria-describedby="slick-slide-control00" style="width: 266px;">
+                            <a href="packages" tabindex="0">
+                                <img src="images/mhpremium.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-active" data-slick-index="1" aria-hidden="false"
+                            tabindex="0" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01"
+                            style="width: 266px;">
+                            <a href="packages" tabindex="0">
+                                <img src="images/mhpro.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-active" data-slick-index="2" aria-hidden="false"
+                            tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02"
+                            style="width: 266px;">
+                            <a href="packages" tabindex="0">
+                                <img src="images/mhsupreme.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1"
+                            role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control03"
+                            style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhexpert.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true"
+                            tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhpremium.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true"
+                            tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhpro.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true"
+                            tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhsupreme.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                        <div class="card p-3 m-0 slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true"
+                            tabindex="-1" style="width: 266px;">
+                            <a href="packages" tabindex="-1">
+                                <img src="images/mhexpert.jpg" alt="" class="card-img">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button>
+                <ul class="slick-dots" role="tablist">
+                    <li class="slick-active" role="presentation"><button type="button" role="tab"
+                            id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="0"
+                            aria-selected="true">1</button></li>
+                    <li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control01"
+                            aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1">2</button></li>
+                    <li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control02"
+                            aria-controls="slick-slide02" aria-label="3 of 2" tabindex="-1">3</button></li>
+                    <li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control03"
+                            aria-controls="slick-slide03" aria-label="4 of 2" tabindex="-1">4</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid p-0 m-0">
+            <img src="https://medall.s3.ap-south-1.amazonaws.com/why.jpg" loading="lazy" class="img-fluid" alt="">
+</div>
+
+    </main>
+    <div class="footerContainer" style="z-index:1050!important">
+        <div class="footerContain">
+
+            <img style="width:250px!important" src="./images/footerLogo.png" alt="">
+            <p>Follow Me</p>
+
+            <a href="https://www.facebook.com/MedallHealthcare" target="_blank" class="me-4 link-secondary">
+                <img class="img-fluid" src="images/fa_facebook.svg">
+            </a>
+            <a href="https://twitter.com/MedallHealth" target="_blank" class="me-4 link-secondary">
+                <img class="img-fluid" src="images/fa_twitter.svg">
+            </a>
+            <a href="https://www.instagram.com/medallhealthcare/" target="_blank" class="me-4 link-secondary"> <img
+                    class="img-fluid" src="images/fa_instagram.svg">
+            </a>
+            <a href="https://in.linkedin.com/company/medall?original_referer=https%3A%2F%2Fwww.medall.in%2F"
+                target="_blank" class="me-4 link-secondary"> <img class="img-fluid" src="images/fa_linkedin.svg">
+            </a>
+            <a href="https://twitter.com/MedallHealth" target="_blank" class="me-4 link-secondary"> <img
+                    class="img-fluid" src="images/fa_youtube.svg">
+            </a>
+        </div>
+
+        <div class="footerContain1">
+            <div class="footerPlace">
+                <li>Any Hour </li>
+                <li>Any Place</li>
+            </div>
+            <h1>Collection centres all over Chennai and Bengaluru</h1>
+            <div class="footer_care">
+
+                <a href="tel:7550177777">
+                    <p><img class="img-fluid" style="width:25px!important" src="images/phonecall.svg"> 75501
+                        77777</p>
+                </a>
+                <a href="mailto:customercare@medall.in">
+                    <p><img class="img-fluid" style="width:25px!important" src="images/mail.svg"> customercare@medall.in
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+            </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+            </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+            crossorigin="anonymous"></script>
+
+        <!-- Load on page load only if the location is not set! -->
+        <script>
+            $(window).on('load', function () {
+                $("#locate").modal("show");
+            })
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                var modalId = document.getElementById('modalId');
+
+                modalId.addEventListener('show.bs.modal', function (event) {
+                    // Button that triggered the modal
+                    let button = event.relatedTarget;
+                    // Extract info from data-bs-* attributes
+                    let recipient = button.getAttribute('data-bs-whatever');
+
+                    // Use above variables to manipulate the DOM
+
+                });
+            });
+        </script>
+        <!-- Phone authentication  -->
+        <script>
+            $(document).ready(function () {
+                $('.search-box input[type="text"]').on("keyup input", function () {
+                    var inputVal = $(this).val();
+                    var resultDropdown = $(this).siblings(".result");
+                    if (inputVal.length > 2) {
+                        $.get('https://www.medall.in/shop/db/search_pincode', {
+                            pin: inputVal
+                        }).done(function (data) {
+                            // Display the returned data in browser
+
+                            // console.log(data);
+                            resultDropdown.html(data);
+                        });
+                    } else {
+
+                        resultDropdown.empty();
+                    }
+                });
+                // Set search input value on click of result item
+                $(document).on("click", ".result p", function () {
+                    $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+                    $(this).parent(".result").empty();
+                });
+            });
+        </script>
+
+        <script>
+            // search products 
+            $(document).ready(function () {
+                $('.search-item input[type="text"]').on("keyup input", function () {
+
+                    var inputVal = $(this).val();
+                    var resultDropdown = $(this).siblings(".result-items");
+
+                    /* Get input value on change */
+                    if (this.value.length < 2) {
+                        resultDropdown.empty();
+                    }
+                    // return;
+                    if (inputVal.length > 1) {
+                        $.get('https://www.medall.in/shop/db/search_prod', {
+                            prod: inputVal
+                        }).done(function (data) {
+                            resultDropdown.html(data);
+                        });
+                    } else {
+
+                        resultDropdown.empty();
+                    }
+                });
+                // Set search input value on click of result item
+                $(document).on("click", ".result-items", function () {
+                    $(this).parents(".search-item").find('input[type="text"]').val($(this).text());
+                    $(this).parent(".result-items").empty();
+                });
+            });
+        </script>
+        <script>
+            // logged in 
+            function loggedIn() {
+                document.getElementById("loggedIn").style.display = "block";
+                setTimeout(displayLoggedIn, 3000);
+            }
+            function displayLoggedIn() {
+                document.getElementById("loggedIn").style.display = "none";
+            }
+            // Register before log in 
+            function register() {
+                document.getElementById("register").style.display = "block";
+                setTimeout(displayRegister, 3000);
+            }
+            function displayRegister() {
+                document.getElementById("register").style.display = "none";
+            }
+            // Added to cart 
+            function alertAdd(p_cid, p_id, p_price) {
+                if (p_cid) {
+                    $.ajax({
+                        type: "POST",
+                        url: "https://www.medall.in/shop/db/addToCart",
+                        data: {
+                            "p_cid": p_cid,
+                            "p_id": p_id,
+                            "p_price": p_price,
+                        },
+                        success: function (res) {
+                            let sessionGet = sessionStorage.getItem('cartCount');
+                            if (sessionGet < 1 || sessionGet == 'NaN') {
+                                sessionGet = 0;
+                            }
+                            // the span with cart count 
+                            let cartCountSpan = document.getElementById("cartCount");
+                            let cartCount = res;
+
+
+                            // increment cart count 
+                            cartCount++;
+
+                            // update cart cartCountSpan 
+                            cartCountSpan.innerHTML = cartCount;
+                            sessionStorage.setItem('cartCount', cartCount);
+                            let btn = document.getElementById(p_cid);
+                            btn.disabled = true;
+                        },
+                        error: function (request, error) {
+                            console.log("ERROR:" + error);
+                        }
+                    });
+                }
+            }
+
+            function displayAdd() {
+                document.getElementById("cartAlertAdd").style.display = "none";
+            }
+
+            // already in cart
+            function alertAlready() {
+                document.getElementById("cartAlertAlready").style.display = "block";
+                setTimeout(displayAlready, 500);
+            }
+
+            function displayAlready() {
+                document.getElementById("cartAlertAlready").style.display = "none";
+            }
+
+            // removed from cart 
+            function alertRemoved() {
+                document.getElementById("cartAlertRemoved").style.display = "block";
+                setTimeout(displayRemoved, 500);
+            }
+
+            function displayRemoved() {
+                document.getElementById("cartAlertRemoved").style.display = "none";
+            }
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('.myslick').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2500,
+                    arrows: false,
+                    dots: true,
+                    responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            arrows: false,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: false,
+                        }
+                    }
+                    ]
+                });
+            });
+        </script>
+
+        <script>
+            var myCarousel = document.getElementById('carouselExampleIndicators')
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 2000,
+
+            })
+        </script>
+
+        <script>
+            // testimonials 
+
+            $('.multiple-items').slick({
+               
+                infinite: true,
+                autoplaySpeed: 1000,
+                autoplay: true,
+                slidesToShow: 3,
+                arrows: true,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                ]
+            });
+        </script>
+
+        <script>
+            // packages 
+            $('.center').slick({
+                infinite: true,
+                autoplaySpeed: 2000,
+                autoplay: true,
+                slidesToShow: 3,
+                arrows: true,
+                dots: true,
+                slidesToScroll: 1,
+                centerMode: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: false,
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+
+                        centerMode: false,
+
+                        slidesToShow: 2
+                    }
+                }
+                ]
+            });
+        </script>
+
+    </div>
+    <script type="text/javascript"
+        id="">!function (b, e, f, g, a, c, d) { b.fbq || (a = b.fbq = function () { a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments) }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d)) }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js"); fbq("init", "2206448649529767"); fbq("track", "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2206448649529767&amp;ev=PageView&amp;noscript=1"></noscript>
+    <iframe id="_hjSafeContext_30315817" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank"
+        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+    <div
+        style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;">
+        <div
+            style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;">
+        </div>
+        <div
+            style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;">
+            <iframe title="recaptcha challenge expires in two minutes"
+                src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;k=6LcMZR0UAAAAALgPMcgHwga7gY5p8QMg1Hj-bmUv"
+                name="c-fhtt1uga06rf" frameborder="0" scrolling="no"
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                style="width: 100%; height: 100%;"></iframe></div>
+    </div>
+</body>
+
+</html>
